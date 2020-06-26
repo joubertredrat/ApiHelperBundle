@@ -1,0 +1,4 @@
+services:
+    RedRat\ApiHelperBundle\EventListener\RequestApiListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.request, priority: 12 }
