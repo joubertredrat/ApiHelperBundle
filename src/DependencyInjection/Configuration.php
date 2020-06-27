@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace RedRat\ApiHelperBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\Definition\Builder\ScalarNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -14,12 +15,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('redrat_api_helper');
-
-        if (method_exists($treeBuilder, 'getRootNode')) {
-            $rootNode = $treeBuilder->getRootNode();
-        } else {
-            $rootNode = $treeBuilder->root('redrat_api_helper');
-        }
+        $rootNode = $this->getRootNode($treeBuilder);
 
         $rootNode
             ->children()
@@ -33,6 +29,14 @@ class Configuration implements ConfigurationInterface
         ;
 
         return $treeBuilder;
+    }
+
+    private function getRootNode(TreeBuilder $treeBuilder): NodeDefinition
+    {
+        return method_exists($treeBuilder, 'getRootNode')
+            ? $treeBuilder->getRootNode()
+            : $treeBuilder->root('redrat_api_helper')
+        ;
     }
 
     private function getUrlPathPrefix(): ScalarNodeDefinition

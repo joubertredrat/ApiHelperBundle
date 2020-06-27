@@ -12,6 +12,8 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class RedRatApiHelperExtension extends Extension
 {
+    public const EXTENSION_ALIAS = 'redrat_api_helper';
+
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
@@ -26,6 +28,6 @@ class RedRatApiHelperExtension extends Extension
 
     public function getAlias()
     {
-        return 'redrat_api_helper';
+        return self::EXTENSION_ALIAS;
     }
 }

@@ -35,8 +35,8 @@ class ApiUrlPrefixOption implements ApiUrlPrefixOptionInterface
         return filter_var(
             $request->getRequestUri(),
             FILTER_VALIDATE_REGEXP,
-            ['options' => ['regexp' => $this->getUrlPathPrefixRegex($urlPathPrefix)]]) !== false
-        ;
+            ['options' => ['regexp' => $this->getUrlPathPrefixRegex($urlPathPrefix)]]
+        ) !== false;
     }
 
     private function getUrlPathPrefixRegex(string $urlPathPrefix): string
@@ -49,7 +49,7 @@ class ApiUrlPrefixOption implements ApiUrlPrefixOptionInterface
 
     private function getUrlPathsPrefix(): array
     {
-        return array_map(function($item) {
+        return array_map(function ($item) {
             return $item['url_path_prefix'];
         }, $this->options['paths']);
     }

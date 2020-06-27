@@ -30,15 +30,6 @@ class RequestApiListener implements EventSubscriberInterface
         $this->apiUrlPrefixOption = $apiUrlPrefixOption;
     }
 
-    public static function getSubscribedEvents()
-    {
-        return [
-            KernelEvents::REQUEST => [
-                ['onKernelRequest', 8],
-            ],
-        ];
-    }
-
     public function onKernelRequest(RequestEvent $event)
     {
         $request = $event->getRequest();
@@ -55,8 +46,7 @@ class RequestApiListener implements EventSubscriberInterface
                         self::CONTENT_TYPE_JSON,
                         $request
                             ->headers
-                            ->get('CONTENT_TYPE')
-                        ,
+                            ->get('CONTENT_TYPE'),
                     )
                 )
             );
@@ -66,7 +56,7 @@ class RequestApiListener implements EventSubscriberInterface
 
         if (!$this->isValidBodyData($request)) {
             $event->setResponse(
-                $this->getResponse('Invalid json data')
+                $this->getResponse('Invalid json body data')
             );
 
             return;
@@ -124,5 +114,14 @@ class RequestApiListener implements EventSubscriberInterface
                 ->replace($jsonData)
             ;
         }
+    }
+
+    public static function getSubscribedEvents()
+    {
+        return [
+            KernelEvents::REQUEST => [
+                ['onKernelRequest', 8],
+            ],
+        ];
     }
 }

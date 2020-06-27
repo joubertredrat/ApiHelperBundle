@@ -1,4 +1,7 @@
 /vendor/
 composer.phar
 .idea
+.phpunit
 .phpunit.result.cache
+/phpunit.xml
+/tests/_reports/*
