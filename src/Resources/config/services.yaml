@@ -1,4 +1,6 @@
 services:
     RedRat\ApiHelperBundle\EventListener\RequestApiListener:
+        arguments:
+            $apiUrlPrefixOption: '@RedRat\ApiHelperBundle\Options\ApiUrlPrefixOption'
         tags:
-            - { name: kernel.event_listener, event: kernel.request, priority: 12 }
+            - { name: kernel.event_listener, event: kernel.request, priority: 8 }
