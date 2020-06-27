@@ -31,5 +31,6 @@ script:
     - composer run coverage
 
 after_script:
+    - mkdir -p build/logs
     - cp tests/_reports/logs/clover.xml build/logs/clover.xml
     - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build -t clover --exit-code $TRAVIS_TEST_RESULT; fi
