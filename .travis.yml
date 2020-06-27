@@ -12,11 +12,7 @@ cache:
 env:
     global:
         - COMPOSER_ARGS="--dev"
-
-addons:
-    code_climate:
-        repo_token:
-            secure: "UQAKoifajbp8OyqzMhcsLjLAYgl99Tb9baKSp3BOkT0vS5JhcNjEdVAE3ozOVILa59tsk/ATbD+vN04tKwwxQwKwaaEO/EkyBqpUZ/wSZb5FHNVriYG0bwg4rAeDZ3wZAYr04H32Yq3B5b0jTlCfvkdf1wIooQpVEAUbslfSp3Ei1tJjz1VScaEDzghMq3a0NJkeRU5/2NchKRI6+SPO/Jl1iC1iAc67WCa6SsigEv1b6pjM1AGfz1TIqMD1m1LknZEJWf3TvJoLZzn4zyfuzGd5J0DGWPhyG36BlKMJLCF/8qnHSIKTWMSMUW0OW0m3YhvOmdguIheyixZbn8Mx9u3M3ZOHcq/uAs/H/qk1iisOdq72aDBYcubyk1xBAWo/C9rk1nAZJp1SZ9YOZjHyAY3uFBIokUvEer04dbZM/guWL7/jZ88M3hY358aIC6UVODeYhjIPfO34ZZSbtAJz5zpfIndUkCa09Dz67knsvgWo+5Ks86uXeBRvijlGq0Hic7U7ukYdSU8eEx/0WeS0+HMCgFlWnctoOnuO5bs864P8cniEFmrP/uDAwSJAC6uYXWgKBsune+kzDHvs/RlOwP5uEb/oHYvFq3DkoAOxAuoxHWpoC+6qvk3akW5GmMiFr9q/4j03ECEC/nzNjyVEbJw7Qq/dC4k8kdprsHbLj3M="
+        - CC_TEST_REPORTER_ID=UQAKoifajbp8OyqzMhcsLjLAYgl99Tb9baKSp3BOkT0vS5JhcNjEdVAE3ozOVILa59tsk/ATbD+vN04tKwwxQwKwaaEO/EkyBqpUZ/wSZb5FHNVriYG0bwg4rAeDZ3wZAYr04H32Yq3B5b0jTlCfvkdf1wIooQpVEAUbslfSp3Ei1tJjz1VScaEDzghMq3a0NJkeRU5/2NchKRI6+SPO/Jl1iC1iAc67WCa6SsigEv1b6pjM1AGfz1TIqMD1m1LknZEJWf3TvJoLZzn4zyfuzGd5J0DGWPhyG36BlKMJLCF/8qnHSIKTWMSMUW0OW0m3YhvOmdguIheyixZbn8Mx9u3M3ZOHcq/uAs/H/qk1iisOdq72aDBYcubyk1xBAWo/C9rk1nAZJp1SZ9YOZjHyAY3uFBIokUvEer04dbZM/guWL7/jZ88M3hY358aIC6UVODeYhjIPfO34ZZSbtAJz5zpfIndUkCa09Dz67knsvgWo+5Ks86uXeBRvijlGq0Hic7U7ukYdSU8eEx/0WeS0+HMCgFlWnctoOnuO5bs864P8cniEFmrP/uDAwSJAC6uYXWgKBsune+kzDHvs/RlOwP5uEb/oHYvFq3DkoAOxAuoxHWpoC+6qvk3akW5GmMiFr9q/4j03ECEC/nzNjyVEbJw7Qq/dC4k8kdprsHbLj3M=
 
 before_script:
     - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
