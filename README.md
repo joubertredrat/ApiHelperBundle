@@ -6,6 +6,7 @@
 [![Latest Stable Version](https://poser.pugx.org/redrat/api-helper-bundle/v)](https://packagist.org/packages/redrat/api-helper-bundle)
 [![Total Downloads](https://poser.pugx.org/redrat/api-helper-bundle/downloads)](https://packagist.org/packages/redrat/api-helper-bundle/stats)
 [![License](https://poser.pugx.org/redrat/api-helper-bundle/license)](https://packagist.org/packages/redrat/api-helper-bundle)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjoubertredrat%2FApiHelperBundle.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjoubertredrat%2FApiHelperBundle?ref=badge_shield)
 
 
 This Symfony bundle provides configuration to validate and convert data for API routes.
