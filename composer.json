@@ -12,8 +12,8 @@
   "require": {
     "php": ">=7.4",
     "ext-json": "*",
-    "symfony/framework-bundle": "4.4.*",
-    "symfony/yaml": "4.4.*",
+    "symfony/framework-bundle": "^4.4 || ^5.0",
+    "symfony/yaml": "^4.4 || ^5.0",
     "fig/http-message-util": "^1.1"
   },
   "require-dev": {
