@@ -92,6 +92,10 @@ class RequestApiListener implements EventSubscriberInterface
 
     private function isValidBodyData(Request $request): bool
     {
+        if ("" === $request->getContent()) {
+            return true;
+        }
+
         json_decode($request->getContent(), true);
 
         return JSON_ERROR_NONE == json_last_error();
@@ -106,6 +110,10 @@ class RequestApiListener implements EventSubscriberInterface
 
     private function convertData(Request $request): void
     {
+        if ("" === $request->getContent()) {
+            return;
+        }
+
         $jsonData = json_decode($request->getContent(), true);
 
         if ($jsonData) {
